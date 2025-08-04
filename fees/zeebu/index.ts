@@ -82,7 +82,9 @@ const graphsDaily = (graphUrls: Record<string, string>) => {
         const dailySupplySideRevenue = dailyFees * 0.6 / 100;
         const totalSupplySideRevenue = totalFees * 0.6 / 100;
 
-        return {dailyFees, totalFees, dailyUserFees, totalUserFees, dailyRevenue, totalRevenue, dailyHoldersRevenue, totalHoldersRevenue };
+        const dailyProtocolRevenue = dailyFees - dailyHoldersRevenue;
+
+        return {dailyFees, totalFees, dailyUserFees, totalUserFees, dailyRevenue, totalRevenue, dailyHoldersRevenue, totalHoldersRevenue, dailyProtocolRevenue };
       
     };
   };
